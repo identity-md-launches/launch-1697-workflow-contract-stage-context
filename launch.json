@@ -1,0 +1,24 @@
+{
+  "kind": "evm_project",
+  "token": {
+    "contract": "LaunchToken",
+    "name": "A Funeral For Every Dead Token",
+    "symbol": "WAKE",
+    "decimals": 18
+  },
+  "contracts": [
+    {
+      "contract": "Graveyard",
+      "constructorArgs": [
+        "$owner"
+      ]
+    }
+  ],
+  "pool": {
+    "pairedCurrency": "0xd34a99bc0f67ae1bbd63c660e6d0b0dd03e263b7",
+    "fee": 12500,
+    "tickSpacing": 60,
+    "initialPrice": "79228162514264337593543950336"
+  },
+  "notes": "LaunchToken is the fixed-supply WAKE token (1,000,000,000 at 18 decimals, minted to the factory). Graveyard takes one constructor argument, its immutable owner, set to the launch's owner ($owner). After launch the owner calls setWakeToken once with the deployed LaunchToken address (it cannot be changed afterwards), consecrates buriable tokens (append-only, WAKE excluded) and funds WAKE rewards, which the owner can never withdraw. Mourners bury their entire balance of a consecrated token to 0x...dEaD, once per wallet per token, and receive 0.05% of the Graveyard's WAKE balance. Flowers burn WAKE to 0x...dEaD. No ETH is accepted and no initialization calls are made."
+}
